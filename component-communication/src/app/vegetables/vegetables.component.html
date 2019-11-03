@@ -1,0 +1,5 @@
+<span *ngFor="let veg of vegetables">
+  {{ veg.name }}-{{ veg.price }}
+  <button (click)="onClick(veg)">add to cart</button>
+  <br />
+</span>
