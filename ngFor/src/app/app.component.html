@@ -1,0 +1,21 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div
+  *ngFor="
+    let number of arr;
+    let i = index;
+    let isLast = last;
+    let isFirst = first;
+    let isOdd = odd
+  "
+>
+  <span [ngStyle]="{ color: getColor(i) }" [ngClass]="{ bold: isFirst }">
+    {{ number }} <span *ngIf="isLast"> This is the last</span>
+  </span>
+</div>
+<button (click)="sum()">Sum</button>
+<p>{{ sumOdd }}</p>
+<button (click)="smaller()">isSmaller</button>
+<p>
+  második elem: {{ arr[1] }}, páratlan indexűek összege: {{ sumEven }}, tehát:
+  {{ isSmaller }}
+</p>
