@@ -1,0 +1,12 @@
+<span>{{ piece }}</span>
+<br />
+<app-child
+  [size]="tomb.length"
+  (childClick)="childClickHandler($event)"
+  (childClickMin)="childClickMinHandler($event)"
+  (childOnChange)="childOnChangeHandler($event)"
+  (childOnAdd)="childOnAddHandler($event)"
+>
+</app-child>
+<br />
+<span>{{ tomb[this.count] }}</span>
