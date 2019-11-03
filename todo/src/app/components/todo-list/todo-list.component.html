@@ -1,0 +1,21 @@
+<table>
+  <div *ngFor="let todo of todos">
+    <tr>
+      <td>
+        <!--<input type="checkbox" (change)="onCheckboxClick($event, todo.id)" />-->
+      </td>
+      <td>
+        <app-todo
+          [todo]="todo"
+          [selectedTodoIds]="selectedTodoIds"
+          (selectClick)="handleselectClick($event)"
+          (deleteClick)="handleDeleteClick($event)"
+        ></app-todo>
+      </td>
+    </tr>
+  </div>
+</table>
+
+<button type="button" (click)="deleteTodos(selectedTodoIds)">
+  Delete checked
+</button>
