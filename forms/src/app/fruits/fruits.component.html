@@ -1,0 +1,42 @@
+<form #form="ngForm">
+  <label>Name: </label><label class="red">*</label>
+  <input
+    type="text"
+    name="name"
+    [(ngModel)]="name"
+    #formName="ngModel"
+    required
+    minlength="4"
+    maxlength="15"
+  />
+  <br />
+  <small *ngIf="formName.touched && !formName.valid" class="red">
+    A kitöltés kötelező. Min 4, Max 15 karakter
+  </small>
+  <br />
+  <label>Color: </label>
+  <input type="text" name="color" [(ngModel)]="color" /><br />
+  <label>Calories: </label>
+  <input type="number" name="kalories" [(ngModel)]="kalories" /><br />
+  <small *ngIf="kalories > 100" class="yellow">Too much calories</small>
+  <br />
+  <label>Size: </label><label class="red">*</label>
+  <select (change)="onChange($event)" required>
+    <option value="" disabled selected>Please choose a size</option>
+    <option value="small">small</option>
+    <option value="medium">medium</option>
+    <option value="big">big</option>
+  </select>
+  <button [disabled]="name == null || size == null" (click)="onSave()">
+    Save
+  </button>
+</form>
+<span *ngFor="let fruit of fruits">
+  <div *ngIf="isSaved" class="card">
+    Name: {{ fruit.name }}<br />
+    Color: {{ fruit.color }}<br />
+    Calories: {{ fruit.kalories }}<br />
+    Size: {{ fruit.size }} <br />
+    Id: {{ fruit.id }} <br />
+  </div>
+</span>
