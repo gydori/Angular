@@ -1,0 +1,7 @@
+<div *ngIf="isCollapsed">
+  <p>Az utolsó elem: {{ elements[elements.length - 1] }}</p>
+  <input type="text" [(ngModel)]="element" />
+  <button (click)="onAdd()">Add</button>
+</div>
+<br />
+<button (click)="onCollapse()">{{ collapseMessage }}</button>

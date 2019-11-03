@@ -1,0 +1,17 @@
+<p>pokemon works!</p>
+<a routerLink=""><button>Back</button></a>
+<p>count: {{ count }}</p>
+<div *ngFor="let p of pokemons; let i = index">
+  <div *ngIf="i >= pokemons.length - 10" appGreen>
+    {{ p.name }}
+  </div>
+</div>
+<br />
+<form (ngSubmit)="onSubmit()">
+  <label>Create new Pokemon!</label><br />
+  <label>Name: </label>
+  <input type="text" [(ngModel)]="name" name="name" /><br />
+  <label>Url: </label>
+  <input type="text" [(ngModel)]="url" name="url" /><br />
+  <button type="submit" class="btn btn-primary">Add pokemon</button>
+</form>

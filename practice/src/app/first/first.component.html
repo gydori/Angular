@@ -1,0 +1,27 @@
+<div *ngIf="isCollapsed">
+  <label>Adj meg két számot!</label><br />
+  <input type="number" [(ngModel)]="num1" />
+  <input type="number" [(ngModel)]="num2" />
+  <button (click)="onSum()">Sum</button>
+  <p [ngStyle]="{ backgroundColor: getColor() }">{{ add }}</p>
+  <input type="text" [disabled]="!isChecked" [(ngModel)]="element" />
+  <input type="checkbox" [(ngModel)]="isChecked" />
+  <button (click)="onAdd()" [disabled]="disabledAdd()">
+    Add
+  </button>
+  <label *ngIf="elements.length >= 5"> Nem vehető fel több érték!</label>
+  <br />
+  <label>A tömb elemei: </label>
+  <div *ngFor="let e of elements; let isOdd = odd">
+    <span [ngClass]="{ blue: isOdd }">{{ e }}</span>
+  </div>
+  <br />
+</div>
+<button (click)="onCollapse()">{{ collapseMessage }}</button>
+<app-second
+  [elements]="elements"
+  (onAddClick)="handleOnAddClick($event)"
+></app-second>
+<br />
+<a routerLink="pokemons"><button>Pokemons</button></a><br />
+<a routerLink="dogs"><button>Show a dog</button></a>
