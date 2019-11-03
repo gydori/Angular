@@ -1,0 +1,7 @@
+<div class="card">
+  <h3 [ngStyle]="{ backgroundColor: getColor() }">{{ title }}</h3>
+  <button (click)="onClick()">{{ message }}</button>
+  <div *ngFor="let prof of profs; let i = index">
+    <span>{{ prof }}</span>
+  </div>
+</div>

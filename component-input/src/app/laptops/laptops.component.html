@@ -1,0 +1,22 @@
+<br />
+<span *ngFor="let acer of acerTomb">
+  <span>
+    <app-acer [name]="'Acer'" [type]="acer" [like]="false"></app-acer>
+  </span>
+</span>
+<br />
+<span *ngFor="let hp of hpTomb">
+  <span>
+    <app-hp [name]="'HP'" [type]="hp" [like]="false"></app-hp>
+  </span>
+</span>
+<br />
+<span *ngFor="let toshiba of toshibaTomb">
+  <span>
+    <app-toshiba
+      [name]="'Toshiba'"
+      [type]="toshiba"
+      [like]="true"
+    ></app-toshiba>
+  </span>
+</span>
