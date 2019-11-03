@@ -1,0 +1,31 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<head>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+</head>
+<body>
+  <div class="card">
+    <div class="card-header">Tetszőleges cím</div>
+    <div class="card-body">
+      <textarea [(ngModel)]="text" [disabled]="!check"></textarea><br />
+      <input type="checkbox" [(ngModel)]="check" />editable
+      <i
+        class="fa fa-info-circle"
+        data-toggle="tooltip"
+        data-placement="top"
+        title="Csak akkor tölthető ki a mező ha be van pipálva"
+      ></i>
+      <p *ngIf="text.length >= 10" [ngStyle]="{ color: setColor() }">
+        {{ text }}
+      </p>
+      <br />
+      <select [(ngModel)]="pColor" (change)="onChangeCategorySelect($event)">
+        <option value="blue">blue</option>
+        <option value="red">red</option>
+        <option value="green">green</option>
+      </select>
+    </div>
+  </div>
+</body>
