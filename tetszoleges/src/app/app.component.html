@@ -1,0 +1,10 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<label>Name: </label>
+<input type="text" name="name" [(ngModel)]="name" /><br />
+<label>Age: </label>
+<input type="number" name="age" [(ngModel)]="age" /><br />
+<label>Male</label><br />
+<input type="checkbox" [(ngModel)]="gender" />
+Male<br />
+<button (click)="add()" [disabled]="!name">Add</button><br />
+{{ tomb.length }}
