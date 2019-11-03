@@ -1,0 +1,12 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<input type="text" name="name" [(ngModel)]="name" />
+<!--<p *ngIf="name !== undefined" [ngStyle]="{ backgroundColor: getColor() }">-->
+<p *ngIf="name !== undefined" [ngClass]="{ blue: name.length > 3 }">
+  {{ name }}
+</p>
+<p *ngIf="name === undefined || name === ''">Add meg a neved!</p>
+<input type="checkbox" [(ngModel)]="check" />checkbox<br />
+<button (click)="greeter()" [disabled]="name === undefined || name === ''">
+  Hello
+</button>
+<button (click)="reset()">Reset</button>
