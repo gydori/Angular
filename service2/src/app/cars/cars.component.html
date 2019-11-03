@@ -1,0 +1,43 @@
+<select (change)="onChangeCategorySelect($event)">
+  <option value="allcars" selected="selected">All cars</option>
+  <option value="familycars">Family cars</option>
+  <option value="sportcars">Sport cars</option>
+</select>
+<span *ngIf="selectedValue == 'sportcars'">
+  <fieldset>
+    <legend>Add Car</legend>
+    <label>id:</label>
+    <input type="number" name="id" [(ngModel)]="id" /><br />
+    <label>manufacturer:</label>
+    <input type="text" name="manufacturer" [(ngModel)]="manufacturer" /><br />
+    <label>seats:</label>
+    <input type="number" name="seats" [(ngModel)]="seats" /><br />
+    <label>type:</label>
+    <input type="text" name="type" [(ngModel)]="type" /><br />
+    <label>color:</label>
+    <input type="text" name="color" [(ngModel)]="color" /><br />
+    <button
+      (click)="onClick()"
+      [disabled]="
+        id == null ||
+        manufacturer == null ||
+        seats == null ||
+        type == null ||
+        color == null
+      "
+    >
+      Add car
+    </button>
+  </fieldset>
+</span>
+<br />
+<app-filter (onChangeNum)="onChangeNumHandler($event)"></app-filter>
+<br />
+<div *ngIf="max != null" class="card card-body">
+  <span *ngFor="let car of cars; let i = index">
+    <span *ngIf="i < max">
+      {{ car.id }}. {{ car.manufacturer }} - {{ car.type }}, {{ car.seats }},
+      {{ car.color }} <br />
+    </span>
+  </span>
+</div>
