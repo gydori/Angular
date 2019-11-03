@@ -1,0 +1,21 @@
+<h1>Rockets</h1>
+
+<input type="number" max="5" [(ngModel)]="id" />
+<button (click)="onClick(id)">Get rocket</button><br />
+<span>hahooooo {{ rocketById }}</span
+><br /><br />
+
+<span *ngFor="let rocket of rockets; let i = index">
+  <span appRedColor [index]="i">
+    <span appBlueBG>active: {{ rocket.active ? "Active" : "Inactive" }}</span>
+    <br />
+    <span appBlueBG>boosters: {{ rocket.boosters }} </span><br />
+    <span appBlueBG>cost_per_launch: {{ rocket.cost_per_launch }}</span>
+    <span *ngIf="rocket.cost_per_launch > 10000000"> very expensive</span>
+    <br />
+    <span appBlueBG>company: {{ rocket.company }} </span><br />
+    <span appBlueBG>country: {{ rocket.country }}</span
+    ><br />
+    <br />
+  </span>
+</span>

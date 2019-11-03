@@ -1,0 +1,16 @@
+<h1>Launches</h1>
+
+<span *ngFor="let launch of launches; let i = index">
+  <span appRedColor [index]="i">
+    <span appBlueBG>flight_number: {{ launch.flight_number }}</span
+    ><br />
+    <span appBlueBG>mission_name: {{ launch.mission_name }}</span
+    ><br />
+    <span appBlueBG>launch_year: {{ launch.launch_year }}</span
+    ><br />
+    <span appBlueBG
+      >upcoming: {{ launch.upcoming ? "Upcoming" : "Launched" }}</span
+    ><br />
+    <br />
+  </span>
+</span>

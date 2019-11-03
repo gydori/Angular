@@ -1,0 +1,14 @@
+<h1>History</h1>
+
+<span *ngFor="let his of history; let i = index">
+  <span appRedColor [index]="i">
+    <span appBlueBG>title: {{ his.title }} </span><br />
+    <span appBlueBG
+      >event_date_utc: {{ his.event_date_utc | date: "short" }} </span
+    ><br />
+    <span appBlueBG>flight_number: {{ his.flight_number }}</span
+    ><br />
+    <span appBlueBG>details: {{ his.details }} </span><br />
+    <br />
+  </span>
+</span>
