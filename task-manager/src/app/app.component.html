@@ -1,0 +1,44 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<p>name: {{ name }}</p>
+<p>id: {{ id }}</p>
+<p>Important: {{ isImportant }}</p>
+<button class="btn btn-primary" (click)="hello()">Hello</button><br />
+<label>Give two number!</label><br />
+<input type="number" name="num1" [(ngModel)]="num1" /><br />
+<input type="number" name="num2" [(ngModel)]="num2" /><br />
+<button (click)="count()" class="btn btn-success">Count</button><br />
+<p>{{ sum }}</p>
+
+<label>Name: </label>
+<input
+  type="text"
+  name="Name"
+  [(ngModel)]="name1"
+  [disabled]="!checkbox"
+/><br />
+<label>Message: </label>
+<textarea
+  name="Message"
+  maxlength="50"
+  [(ngModel)]="message"
+  [disabled]="!checkbox"
+></textarea>
+<p
+  data-toggle="tooltip"
+  data-placement="top"
+  title="Csak akkor tölthető ki a mező ha be van pipálva"
+>
+  <input type="checkbox" [(ngModel)]="checkbox" />
+
+  Editable
+</p>
+<button (click)="onClick()">Show</button>
+<p [ngClass]="{ hidden: show == false, visible: show == true }">
+  {{ name1 }}
+</p>
+<p [ngClass]="{ hidden: show == false, visible: show == true }">
+  {{ message }}
+</p>
+<p [ngClass]="{ hidden: short == false, visible: short == true }">
+  “The name is too short”
+</p>
