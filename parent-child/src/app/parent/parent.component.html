@@ -1,0 +1,9 @@
+<app-child
+  [title]="title"
+  (childOnAdd)="childOnAddHandler($event)"
+  (childOnChange)="childOnChangeHandler($event)"
+></app-child>
+<br />
+<span>{{ count }}</span>
+<br />
+<span>{{ data }}</span>

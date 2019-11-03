@@ -1,0 +1,5 @@
+<span>{{ title }}</span>
+<br />
+<button (click)="onAdd()">Add</button>
+<br />
+<input type="text" (ngModelChange)="onChange($event)" [(ngModel)]="data" />
